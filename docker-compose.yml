@@ -1,0 +1,25 @@
+version: "2"
+networks:
+  myshop:
+    driver: overlay
+services:
+  products:
+    image: kinull/productsapi:BuildNumber
+    networks:
+      - myshop
+  ratings:
+    image:  kinull/ratingsapi:BuildNumber
+    networks:
+      - myshop
+  recommandations:
+    image:  kinull/recommandationsapi:BuildNumber
+    networks:
+      - myshop
+  shop:
+    image:  kinull/shopfront:BuildNumber
+    networks:
+      - myshop
+    environment:
+      - SHOP_PRODUCTS_API_URL=/products/
+      - SHOP_RATINGS_API_URL=/ratings/
+      - SHOP_RECOMMANDATIONS_API_URL=/recommandations/
