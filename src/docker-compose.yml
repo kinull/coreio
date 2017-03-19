@@ -1,27 +1,22 @@
-version: '2'
+version: "2"
 networks:
   myshop:
     driver: overlay
 services:
-  proxy:
-    image: RegistryUrl/myshop/proxy:1.0
-    ports: ["80:80"]
-    networks:
-      - myshop
   products:
-    image: RegistryUrl/myshop/products-api:BuildNumber
+    image: kinull/productsapi:BuildNumber
     networks:
       - myshop
   ratings:
-    image: RegistryUrl/myshop/ratings-api:BuildNumber
+    image:  kinull/ratingsapi:BuildNumber
     networks:
       - myshop
   recommandations:
-    image: RegistryUrl/myshop/recommandations-api:BuildNumber
+    image:  kinull/recommandationsapi:BuildNumber
     networks:
       - myshop
   shop:
-    image: RegistryUrl/myshop/front:BuildNumber
+    image:  kinull/shop-front:BuildNumber
     networks:
       - myshop
     environment:
