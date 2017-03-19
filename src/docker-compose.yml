@@ -16,7 +16,7 @@ services:
     networks:
       - myshop
   shop:
-    image:  kinull/shop-front:BuildNumber
+    image:  kinull/shopfront:BuildNumber
     networks:
       - myshop
     environment:
