@@ -3,6 +3,11 @@ networks:
   myshop:
     driver: overlay
 services:
+  proxy:
+    image: funkygibbon/nginx-proxy:latest
+    ports: ["80:80"]
+    networks:
+      - myshop
   products:
     image: kinull/productsapi:BuildNumber
     networks:
