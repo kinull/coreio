@@ -5,7 +5,7 @@ networks:
 services:
   proxy:
     image: jwilder/nginx-proxy:latest
-        ports: ["80:80"]
+    ports: ["80:80"]
     networks:
       - myshop
   products:
