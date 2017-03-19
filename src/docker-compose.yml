@@ -24,7 +24,7 @@ services:
     image:  kinull/shopfront:BuildNumber
     networks:
       - myshop
-environment:
+    environment:
       - SHOP_PRODUCTS_API_URL=/products/
       - SHOP_RATINGS_API_URL=/ratings/
       - SHOP_RECOMMANDATIONS_API_URL=/recommandations/
