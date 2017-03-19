@@ -29,7 +29,6 @@ namespace ShopFront
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddCors();
             services.AddMvc();
 
             // settings
@@ -46,12 +45,6 @@ namespace ShopFront
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-
-            app.UseCors(cors => {
-                cors.AllowAnyHeader();
-                cors.AllowAnyMethod();
-                cors.AllowAnyOrigin();
-            });
 
             if (env.IsDevelopment())
             {
